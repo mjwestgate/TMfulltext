@@ -1,0 +1,2 @@
+export(get_file_names, extract_text_sections, run_tesseract, read_text, process_ocr)
+importFrom(pdftools, pdf_convert)

@@ -1,0 +1,12 @@
+Package: TMfulltext
+Version: 0.0.1
+Date: 2019-09-26
+Title: Tools for importing full text from PDFs, OCR, or HTML
+Authors@R: c(person(c("Martin", "J."), "Westgate", role=c("aut", "cre"),
+  email="martinjwestgate@gmail.com"))
+Description: This package is being built for a single analysis - mining of all full texts from the journal Austral Ecology. It may (or may not) be useful in other contexts.
+Depends: R (>= 3.5.0)
+Imports: pdftools, rvest
+License: GPL-3
+BugReports: https://github.com/mjwestgate/TMfulltext/issues
+LazyData: true
