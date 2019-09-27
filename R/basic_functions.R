@@ -18,13 +18,13 @@ get_file_names <- function(path){
 }
 
 # import .txt files in a standard way
-read_text <- function(x){
+read_text <- function(x, skip_blank = FALSE){
   scan(x,
     sep = "\n",
     what = "character",
     quote = "",
     quiet = TRUE,
-    blank.lines.skip = FALSE,
+    blank.lines.skip = skip_blank,
     strip.white = TRUE
   )
 }
