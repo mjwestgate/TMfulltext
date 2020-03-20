@@ -1,13 +1,14 @@
 \name{get_file_names}
 \alias{get_file_names}
-\title{Get names of files within a nested list of folders}
-\description{This is a pretty basic implementation, but should work to 3 levels of nestedness.}
+\title{Get names of files within a set of folders}
+\description{Basically a slightly more advanced version of \code{list.files} for nested data structures. This is a pretty basic implementation, but should work to 2 levels of nestedness.}
 \usage{
-get_file_names(path)
+get_file_names(path, suffix)
 }
 \arguments{
-  \item{path}{A path within which to locate files.}
+  \item{path}{A path within which to locate files. Defaults to the working directory}
+  \item{suffix}{Optional suffix to allow returning of selected file types (e.g. "pdf")}
 }
 \value{
-A character vector listing all files and folders
+A character vector listing all files in the top and any subfolders
 }

@@ -1,2 +1,8 @@
-export(get_file_names, extract_text_sections, run_tesseract, read_text, process_ocr)
+export(clean_double_columns, get_file_names, run_tesseract,
+  read_fulltext_html, read_text, process_ocr)
 importFrom(pdftools, pdf_convert)
+importFrom(xml2, read_html)
+importFrom(rvest,
+  html_text,
+  html_nodes,
+  "%>%")

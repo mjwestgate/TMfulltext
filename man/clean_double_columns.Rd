@@ -1,0 +1,18 @@
+\name{clean_double_columns}
+\alias{clean_double_columns}
+\title{Parse text imported from PDFs}
+\description{Text imported from \code{pdftools::pdf_text()} can sometimes include two different columns per line, and words split across those lines. This function attempts to clean data in this format. Fairly experimental at this stage.}
+\usage{
+clean_double_columns(x, single_string = TRUE, remove_references = TRUE)
+}
+\arguments{
+  \item{x}{A HTML file}
+  \item{single_string}{logical: should results be returned as a single string? Defaults to TRUE}
+  \item{remove_references}{logical: should references be removed? Defaults to TRUE}
+}
+\value{
+A string containing cleaned text.
+}
+\examples{
+\dontrun{article <- clean_double_columns(pdftools::pdf_text("file.pdf"))}
+}

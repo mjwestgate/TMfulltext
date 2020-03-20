@@ -1,7 +1,7 @@
 \name{run_tesseract}
 \alias{run_tesseract}
 \title{Run Tesseract}
-\description{Process and image using tesseract via a call to 'system'. Clearly, this requires that tesseract is already installed on your system.}
+\description{Process and image using tesseract via a call to 'system'. This requires that tesseract is already installed on your system.}
 \usage{
 run_tesseract(file, file_out, args = "--psm 1")
 }
