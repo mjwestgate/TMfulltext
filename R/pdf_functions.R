@@ -1,6 +1,3 @@
-# import multiple pdfs
-
-
 #' Import multiple pdfs
 #'
 #' Takes a vector of file names and imports them. Basically a wrapper to
@@ -24,10 +21,22 @@ read_pdfs <- function(
 }
 
 
+#' Import text from a single pdf
+#'
+#' Takes a vector of file names and imports them. Basically a wrapper to
+#' pdftools::pdf_text, with some improvements, namely checking for the existence
+#' and utility of file name before importing. Intended to be called by
+#' read_pdfs.
+#' @param x string (or vector of strings) giving file locations
+#' @param clean_columns logical - should columns get cleaned? Defaults to TRUE
+#' @param cache_dir optional location to store temporary .rds files.
+#'  If not present then text is returned instead
+#' @return a list of same length as x
+#' @export read_pdfs
 read_pdf <- function(x, clean_columns = TRUE, cache_dir){
   # error catching
   if(missing(cache_dir)){cache_dir <- NULL}
-  if(is.na(x) | nchar(x) < 1 | !grepl(".pdf$", a)){
+  if(is.na(x) | nchar(x) < 1 | !grepl(".pdf$", x) | !file.exists(x)){
     return("")
   }else{
     if(file.info(x)$size < 2){
