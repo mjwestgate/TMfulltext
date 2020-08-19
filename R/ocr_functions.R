@@ -1,4 +1,14 @@
-# run tesseract
+#' Run Tesseract
+#'
+#' Process and image using tesseract via a call to 'system'. This requires that
+#' tesseract is already installed on your system.
+#'
+#'
+#' @param file An image
+#' @param file_out Where should the .txt file be saved?
+#' @param args Additional arguments passed to tesseract
+#' @return A .txt file.
+#' @export run_tesseract
 run_tesseract <- function(
   file,
   file_out,
@@ -26,6 +36,27 @@ run_tesseract <- function(
 # the 'psm' parameter, which is necessary for recognising multi-column text
 # issue of how to recognise two columns is raised here:
 # https://stackoverflow.com/questions/31651071/how-to-ocr-multiple-column-in-a-document-using-tesseract
+
+
+#' Process PDFs using OCR
+#'
+#' This function takes a PDF and does several things: 1. convert each page to
+#' png at 300 dpi; 2. scan using tesseract; 3. reimport resulting .txt files;
+#' 4. combines and re-exports as a single txt file.
+#'
+#'
+#' @param filename A PDF file to process
+#' @param temp_path location of a temporary file in which to store intermediate
+#' files
+#' @param save_path location where .txt file should be saved
+#' @param keep_levels how many levels of file structure should be retained.
+#' Currently ignored
+#' @return a single .txt file in the specified file location
+#' @note The ROpenSci package 'tesseract' is not used because of apparent
+#' incapacity to set the 'psm' parameter, which is necessary for recognising
+#' multi-column text. Instead this version called the system version of
+#' tesseract directly via the 'system' function.
+#' @export process_ocr
 process_ocr <- function(
   filename,
   temp_path = "./data_processed/temp",

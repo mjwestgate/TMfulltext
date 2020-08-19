@@ -5,6 +5,24 @@
   # references appear to have gone missing -
     # this is probably due to the poor way of dealing with nested data
     # a better option might be dealing with that structure more directly
+
+
+#' Parse full text articles given as HTML
+#' 
+#' This function takes a link or file, and parses the resulting HTML into a
+#' list where section headings are converted to list entries.
+#' 
+#' 
+#' @param x A HTML file
+#' @return A list of length equal to the number of sections in the source
+#' document (identified by <h2> tags). Each list entry is a character vector;
+#' each entry in the vector is a paragraph from the article text (identified by
+#' <p> tag).
+#' @examples
+#' 
+#' article <- read_fulltext_html("https://doi.org/10.1371/journal.pone.0140973")
+#' 
+#' @export read_fulltext_html
 read_fulltext_html <- function(
   x # path to html (local file or online)
 ){

@@ -9,3 +9,4 @@ Depends: R (>= 3.5.0), rvest, pdftools, xml2
 License: GPL-3
 BugReports: https://github.com/mjwestgate/TMfulltext/issues
 LazyData: true
+RoxygenNote: 7.1.0

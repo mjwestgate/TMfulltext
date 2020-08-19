@@ -5,6 +5,21 @@
   # searches subdirectories (but only to 1 level deep)
   # optionally returns only those files with a specified suffix
 # defaults to searching the working directory
+
+
+#' Get names of files within a set of folders
+#' 
+#' Basically a slightly more advanced version of \code{list.files} for nested
+#' data structures. This is a pretty basic implementation, but should work to 2
+#' levels of nestedness.
+#' 
+#' 
+#' @param path A path within which to locate files. Defaults to the working
+#' directory
+#' @param suffix Optional suffix to allow returning of selected file types
+#' (e.g. "pdf")
+#' @return A character vector listing all files in the top and any subfolders
+#' @export get_file_names
 get_file_names <- function(
   path,
   suffix
@@ -50,6 +65,17 @@ get_file_names <- function(
 }
 
 # import .txt files in a standard way
+
+
+#' Read text files
+#' 
+#' Import .txt files in a standard way
+#' 
+#' 
+#' @param x A .txt file to process
+#' @param skip_blank logical: should blank lines be skipped? Defaults to FALSE
+#' @return A character vector
+#' @export read_text
 read_text <- function(x, skip_blank = FALSE){
   scan(x,
     sep = "\n",

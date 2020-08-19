@@ -1,5 +1,5 @@
 export(clean_double_columns, get_file_names, run_tesseract,
-  read_fulltext_html, read_text, process_ocr)
+  read_fulltext_html, read_text, process_ocr, read_pdf, read_pdfs)
 importFrom(pdftools, pdf_convert)
 importFrom(xml2, read_html)
 importFrom(rvest,
